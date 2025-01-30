@@ -18,5 +18,5 @@ jobs:
           path: my-artifact
           pattern: my-artifact-*
           merge-multiple: true
-          # github-token: ${{ secrets.PAT_TOKEN }}
+          github-token: ${{ secrets.PAT_TOKEN }}
       - run: ls -R my-artifact

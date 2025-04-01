@@ -1,7 +1,7 @@
 name: upload afrifacts
 
 on:
-  workflow_dispatch:
+  # workflow_dispatch:
   workflow_run:
     workflows: ["download afrifacts"]
     types:

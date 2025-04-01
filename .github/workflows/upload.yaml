@@ -1,7 +1,12 @@
 name: upload afrifacts
 
 on:
-  workflow_dispatch:
+  workflow_run:
+    workflows: ["download afrifacts"]
+    types:
+      - completed
+    branches:
+      - ${{ github.head_ref }}
 
 jobs:
   upload:

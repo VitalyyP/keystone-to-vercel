@@ -1,7 +1,9 @@
 name: download afrifacts
 
 on:
-  workflow_dispatch:
+  pull_request:
+    types:
+      - synchronize
 
 jobs:
   download:

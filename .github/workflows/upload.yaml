@@ -6,6 +6,13 @@ on:
     workflows: ["download afrifacts"]
     types:
       - completed
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Are you sure you want to deploy to production?"
+        required: true
+        type: boolean
+        default: false
 
 concurrency:
   group: upload-afrifacts

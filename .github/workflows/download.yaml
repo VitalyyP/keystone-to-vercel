@@ -3,7 +3,9 @@ name: download afrifacts
 on:
   pull_request:
     types:
+      - opened
       - synchronize
+      - reopened
 
 jobs:
   download:

@@ -22,9 +22,9 @@ on:
           - production
         default: preview
 
-concurrency:
-  group: upload-afrifacts
-  cancel-in-progress: true
+# concurrency:
+#   group: upload-afrifacts
+#   cancel-in-progress: true
 
 jobs:
   upload:

@@ -1,14 +1,26 @@
 name: upload afrifacts
 
 on:
+  # workflow_dispatch:
+  # workflow_run:
+  #   workflows: ["download afrifacts"]
+  #   types:
+  #     - completed
   workflow_dispatch:
-  workflow_run:
-    workflows: ["download afrifacts"]
-    types:
-      - completed
+    inputs:
+      confirm:
+        description: "Are you sure you want to deploy to production?"
+        required: true
+        type: boolean
+        default: false
+
+concurrency:
+  group: upload-afrifacts
+  cancel-in-progress: true
 
 jobs:
   upload:
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.run_attempt == 1)
     strategy:
       matrix:
         runs-on: [ubuntu-latest, macos-latest, windows-latest]

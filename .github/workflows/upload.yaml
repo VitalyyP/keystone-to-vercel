@@ -2,10 +2,10 @@ name: upload afrifacts
 
 on:
   # workflow_dispatch:
-  workflow_run:
-    workflows: ["download afrifacts"]
-    types:
-      - completed
+  # workflow_run:
+  #   workflows: ["download afrifacts"]
+  #   types:
+  #     - completed
   workflow_dispatch:
     inputs:
       confirm:

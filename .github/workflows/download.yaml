@@ -11,6 +11,11 @@ jobs:
   download:
     runs-on: ubuntu-latest
     steps:
+       - name: Introduce an error
+        run: |
+          echo "This is an intentional error"
+          some_non_existent_command
+
       - name: List artifacts from last successful workflow
         run: |
           curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \

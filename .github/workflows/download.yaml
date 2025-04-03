@@ -11,7 +11,7 @@ jobs:
   download:
     runs-on: ubuntu-latest
     steps:
-       - name: Introduce an error
+      - name: Introduce an error
         run: |
           echo "This is an intentional error"
           some_non_existent_command

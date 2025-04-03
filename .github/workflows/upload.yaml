@@ -6,10 +6,26 @@ on:
   #   workflows: ["download afrifacts"]
   #   types:
   #     - completed
+  # workflow_dispatch:
+  #   inputs:
+  #     confirm:
+  #       description: "Are you sure you want to deploy to production?"
+  #       required: true
+  #       type: boolean
+  #       default: false
+  #     deploy-env:
+  #       description: "Environment to deploy"
+  #       required: true
+  #       type: choice
+  #       options:
+  #         - preview
+  #         - production
+  #       default: preview
+
   workflow_dispatch:
     inputs:
       confirm:
-        description: "Are you sure you want to deploy to production?"
+        description: "Are you sure you want to deploy?"
         required: true
         type: boolean
         default: false
@@ -19,6 +35,7 @@ on:
         type: choice
         options:
           - preview
+          - staging
           - production
         default: preview
 
